@@ -1,0 +1,118 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>电池的可视化分析</title>  
+    <style>  
+        body {  
+            background-image: url('background.jpg'); /* 替换为您的背景图片路径 */  
+            background-size: cover;  
+            background-attachment: fixed;  
+            display: flex;  
+            flex-direction: column;  
+            align-items: center;  
+            justify-content: center;  
+            height: 100vh;  
+            margin: 0;  
+            padding: 20px;  
+            box-sizing: border-box;  
+        }  
+        .button-container {  
+            display: flex;  
+            flex-wrap: wrap;  
+            justify-content: center;  
+        }  
+        .button-container button {  
+            padding: 15px 30px; /* 调整按钮大小 */  
+            margin: 10px;  
+            font-size: 18px;  
+        }  
+        .image-container {  
+            display: none;  
+            flex-wrap: wrap;  
+            justify-content: center;  
+            margin-top: 20px;  
+        }  
+        .image-container img {  
+            max-width: 400px; /* 调整图片大小 */  
+            margin: 30px;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+<h1>基于python的电池可视化分析图</h1> 
+  
+<div class="button-container">  
+    <button id="show6Images">不同参数对容量变化关系的影响</button>  
+    <button id="show3Images">容量衰减曲线</button>  
+    <button id="show2Images1">累积容量曲线</button>  
+    <button id="show2Images2">dQ/dV曲线</button>  
+    <button id="show2Images3">相关性分析</button>  
+</div>  
+  
+<div id="imageContainer6" class="image-container">  
+    <img src="voltage_vs_capacity1_1.png" alt="Image 1">  
+    <img src="current_vs_capacity1_2.png" alt="Image 2">  
+    <img src="temperature_vs_capacity1_3.png" alt="Image 3">  
+    <img src="Voltage_vs_Capacity1_4.png" alt="Image 4"> 
+    <img src="Current_vs_Capacity1_5.png" alt="Image 4">  
+    <img src="Temperature_vs_Capacity1_6.png" alt="Image 4">   
+</div>  
+  
+<div id="imageContainer3" class="image-container">  
+    <img src="capacity_degradation_curve2_1.png" alt="Image 5">  
+    <img src="charge_capacity_trend2_2.png" alt="Image 6">  
+    <img src="discharge_capacity_trend2_3.png" alt="Image 7">  
+</div>  
+  
+<div id="imageContainer2_1" class="image-container">  
+    <img src="cumulative_capacity_curve3_1.png" alt="Image 8">  
+    <img src="Voltage_vs_Cumulative_Capacity3_2.png" alt="Image 9">  
+</div>  
+  
+<div id="imageContainer2_2" class="image-container">  
+    <img src="charge_dq_dv_curve4_1.png" alt="Image 10">  
+    <img src="discharge_dq_dv_curve4_2.png" alt="Image 11">  
+</div>  
+  
+<div id="imageContainer2_3" class="image-container">  
+    <img src="scatter_matrix_plot5_1.png" alt="Image 12">  
+    <img src="correlation_heatmap5_2.png" alt="Image 13">  
+</div>  
+  
+<script>  
+    document.getElementById('show6Images').addEventListener('click', function() {  
+        hideAllImages();  
+        document.getElementById('imageContainer6').style.display = 'flex';  
+    });  
+      
+    document.getElementById('show3Images').addEventListener('click', function() {  
+        hideAllImages();  
+        document.getElementById('imageContainer3').style.display = 'flex';  
+    });  
+      
+    document.getElementById('show2Images1').addEventListener('click', function() {  
+        hideAllImages();  
+        document.getElementById('imageContainer2_1').style.display = 'flex';  
+    });  
+      
+    document.getElementById('show2Images2').addEventListener('click', function() {  
+        hideAllImages();  
+        document.getElementById('imageContainer2_2').style.display = 'flex';  
+    });  
+      
+    document.getElementById('show2Images3').addEventListener('click', function() {  
+        hideAllImages();  
+        document.getElementById('imageContainer2_3').style.display = 'flex';  
+    });  
+      
+    function hideAllImages() {  
+        var containers = document.querySelectorAll('.image-container');  
+        containers.forEach(function(container) {  
+            container.style.display = 'none';  
+        });  
+    }  
+</script>  
+  
+</body>  
+</html>
